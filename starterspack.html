@@ -1,0 +1,588 @@
+<!doctype html>
+<html>
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> CRYPTO-MORE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <style type="text/css">
+
+
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 260px;
+  background: #6495ed;
+  padding: 15px;
+  z-index: 99;
+}
+.logo {
+  font-size: 25px;
+  padding: 0 15px;
+}
+.sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.menu-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: 40px;
+  overflow-y: scroll;
+}
+.menu-content::-webkit-scrollbar {
+  display: none;
+}
+.menu-items {
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.submenu-active .menu-items {
+  transform: translateX(-56%);
+}
+.menu-title {
+  color: #ffffff;
+  font-size: 14px;
+  padding: 15px 20px;
+}
+.item a,
+.submenu-item {
+  padding: 16px;
+  display: inline-block;
+  width: 100%;
+  border-radius: 12px;
+}
+.item i {
+  font-size: 12px;
+}
+.item a:hover,
+.submenu-item:hover,
+.submenu .menu-title:hover {
+  background:#00008b;
+}
+.submenu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+.submenu {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: calc(-100% - 26px);
+  height: calc(100% + 100vh);
+  background: #6495ed;
+  display: none;
+}
+.show-submenu ~ .submenu {
+  display: block;
+}
+.submenu .menu-title {
+  border-radius: 12px;
+  cursor: pointer;
+}
+.submenu .menu-title i {
+  margin-right: 10px;
+}
+.navbar,
+.main {
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+.sidebar.close ~ .navbar,
+.sidebar.close ~ .main {
+  left: 0;
+  width: 100%;
+}
+.navbar{
+  position: fixed;
+  color: #ffffff;
+  padding: 15px 20px;
+  font-size: 25px;
+  background: #6495ed;
+  cursor: pointer;
+}
+.navbar #sidebar-close {
+  cursor: pointer;
+}
+.logoo1{
+  justify-content:center;
+  align-itemsL:middle;
+  position:center;
+}
+
+.container img{
+  border-radius:100%;
+  border-color:#ffffff;
+background: #ffffff;
+  height: 148px;
+  width: 148px;
+  border-radius: 50%;
+}
+
+.main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(fx1.jpeg);
+  background-size: cover;
+  margin-left
+}
+
+.profile-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  width: 70%;
+  border-radius: 25px;
+  padding: 30px;
+  border: 1px solid #ffffff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  background-color:#ffffff;
+}
+.image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+}
+.image .profile-pic{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+.data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+.data h2{
+  font-size: 33px;
+  font-weight: 600;
+}
+span{
+  font-size: 18px;
+}
+.row{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.row .info{
+  text-align: center;
+  padding: 0 20px;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.buttons .btn{
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 20px;
+  padding: 8px 25px;
+  border-radius: 25px;
+  font-size: 18px;
+  white-space: nowrap;
+  background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
+}
+.buttons .btn:hover{
+  box-shadow: inset 0 5px 20px rgba(0,0,0,0.4);
+}
+.header{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-weight:100px;
+  font-size:40px;
+  color:#ffffff;
+}
+.h11{
+  display:flex;
+  align-items: center;
+  margin-top: 30px;
+  font-weight:100px;
+  font-size:60px;
+  justify-content: center;
+  color:#ffffff;
+}
+.h111{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color:#ffffff;
+}
+
+.btn{
+  color: #fff;
+  text-decoration: none;
+  margin: 0 20px;
+  padding: 8px 25px;
+  border-radius: 25px;
+  font-size: 18px;
+  white-space: nowrap;
+  background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
+}
+.navbar .buttons input{
+  outline: none;
+  color: #f2f2f2;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 12px;
+  padding: 6px 15px;
+  border: none;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-image: linear-gradient( 135deg, #ff9a9e  10%, #F6416C 100%);
+}
+
+
+
+.nav {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav_logo,
+.nav_link,
+.button {
+  color: #fff;
+}
+.nav_logo {
+  font-size: 50px;
+  display: flex;
+  height: 100%;
+}
+.button {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 20px;
+  padding: 8px 25px;
+  border-radius: 25px;
+  font-size: 18px;
+  white-space: nowrap;
+  background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
+  cursor: pointer;
+}
+.button:active {
+  transform: scale(0.98);
+}
+
+
+/* From */
+.form_container {
+  position: fixed;
+  max-width: 320px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+}
+.home.show .form_container {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.signup_form {
+  display: none;
+}
+.form_container.active .signup_form {
+  display: block;
+}
+.form_container.active .login_form {
+  display: none;
+}
+.form_close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #0b0217;
+  font-size: 22px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.form_container h2 {
+  font-size: 22px;
+  color: #0b0217;
+  text-align: center;
+}
+.input_box {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
+}
+.input_box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 30px;
+  color: #333;
+  transition: all 0.2s ease;
+  border-bottom: 1.5px solid #aaaaaa;
+}
+.input_box input:focus {
+  border-color: #0b0217;
+}
+.input_box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #707070;
+}
+.input_box i.email,
+.input_box i.password {
+  left: 0;
+}
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password {
+  color: #7d2ae8;
+}
+.input_box i.pw_hide {
+  right: 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+.option_field {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form_container a {
+  color: #7d2ae8;
+  font-size: 12px;
+}
+.form_container a:hover {
+  text-decoration: underline;
+}
+.checkbox {
+  display: flex;
+  column-gap: 8px;
+  white-space: nowrap;
+}
+.checkbox input {
+  accent-color: #ee88ee;
+}
+.checkbox label {
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: #ee88ee;
+}
+.form_container .button {
+  background: #ee82ee;
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.login_signup {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
+.btn1{
+margin-left:60%;
+
+}
+
+</style>
+</head>
+ <body>
+    <nav class="sidebar">
+      <a href="#" class="logo">Welcome</a>
+
+      <div class="menu-content">
+        <ul class="menu-items">
+		<div class="container"><font color="708090"><img src="111.jpeg" border="10" width="100" height="100"></img></div>
+          <div class="menu-title">MENU</div>
+
+          <li class="item">
+            <a href="cryptomore.html">HOME</a>
+          </li>
+
+          <li class="item">
+            <div class="submenu-item">
+              <span>PLAN</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <ul class="menu-items submenu">
+              <div class="menu-title">
+                <i class="fa-solid fa-chevron-left"></i>
+                BACK
+              </div>
+              <li class="item">
+                <a href="starterspack.html">STARTERS PACK</a>
+              </li>
+			  <li class="item">
+                <a href="classicpack.html">CLASSIC PACK</a>
+              </li>
+			  <li class="item">
+                <a href="premiumpack.html">PREMIUM PACK</a>
+              </li>
+              <li class="item">
+                <a href="propack.html">PRO PACK</a>
+              </li>
+            </ul>
+          </li>
+          <li class="item">
+            <div class="submenu-item">
+              <span>DEPOSIT</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <ul class="menu-items submenu">
+              <div class="menu-title">
+                <i class="fa-solid fa-chevron-left"></i>
+                BACK
+              </div>
+              <li class="item">
+                <a href="btcpg.html">BITCOIN</a>
+              </li>
+              <li class="item">
+                <a href="ethpg.html">ETHERUIM</a>
+              </li>
+              <li class="item">
+                <a href="bnbpg.html">BNB</a>
+              </li>
+              <li class="item">
+                <a href="usdpg.html">USDT</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="item">
+            <a href="wtpg.html">WITHDRAW</a>
+          </li>
+        <li class="item">
+            <a href="abpg.html">ABOUT</a>
+          </li>
+		</ul>
+      </div>
+    </nav>
+
+    <nav class="navbar">
+	<i class="fa-solid fa-bars" id="sidebar-close"></i>
+	<div class="header1">CRYPTO-MORE</div>
+    </nav>
+	
+	<section class="main">
+	<H1 class="header">
+    Invest In The Starters Pack
+	<br>
+     <br>
+	 <br>
+
+	Awesome And Profitable Plans
+	<br>
+	To Invest Into,With Cryptocurrencies,
+	<br>
+	With Just A Click 
+	<br>
+	You Can Earn 50% of Your Investment
+	<br>
+	Every 24 Hours,which Will Be Deposited,
+	<br>
+	Straight Into Your Cashout Wallet
+	<br>
+	<br>
+	</H1>
+	
+	</section>
+	
+	<section class="main">
+	<div class="profile-card">
+    <div class="image">
+	</div>
+    <div class="data">
+      <h2>Starters Pack</h2>
+	  <span>$1,000</span>
+    </div>
+    <div class="row">
+      <div class="info">
+        <h3>Current Investors</h3>
+        <span>18,520</span>
+      </div>
+      <div class="info">
+        <h3>Total Investors</h3>
+        <span>25,220</span>
+      </div>
+    </div>
+    <div class="buttons">
+      <a href="paypg.html" class="btn">Get Started</a>
+    </div>
+  </div>
+</section>
+	
+</section>
+
+   <script>
+   
+const sidebar = document.querySelector(".sidebar");
+const sidebarClose = document.querySelector("#sidebar-close");
+const menu = document.querySelector(".menu-content");
+const menuItems = document.querySelectorAll(".submenu-item");
+const subMenuTitles = document.querySelectorAll(".submenu .menu-title");
+
+sidebarClose.addEventListener("click", () => sidebar.classList.toggle("close"));
+
+menuItems.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    menu.classList.add("submenu-active");
+    item.classList.add("show-submenu");
+    menuItems.forEach((item2, index2) => {
+      if (index !== index2) {
+        item2.classList.remove("show-submenu");
+      }
+    });
+  });
+});
+
+subMenuTitles.forEach((title) => {
+  title.addEventListener("click", () => {
+    menu.classList.remove("submenu-active");
+  });
+});
+</script>
+
+</body>
+</html>
